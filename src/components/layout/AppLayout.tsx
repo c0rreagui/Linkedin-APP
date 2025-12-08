@@ -8,7 +8,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <aside className="hidden w-64 flex-col border-r border-border/40 bg-card/30 backdrop-blur-xl md:flex">
         <div className="flex h-16 items-center px-6 border-b border-border/40">
             <span className="text-xl font-bold font-heading bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              NeonPost UI
+              Lumina
             </span>
         </div>
         <div className="flex-1 px-4 py-6 space-y-2">
@@ -41,7 +41,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       <main className="flex-1 flex flex-col min-h-0 overflow-hidden">
         {/* Header (Mobile only or Global) */}
         <header className="flex h-16 items-center border-b border-border/40 bg-background/50 px-6 backdrop-blur-md md:hidden">
-            <span className="text-lg font-bold">NeonPost UI</span>
+            <span className="text-lg font-bold">Lumina</span>
         </header>
 
         {/* Scrollable Area */}
