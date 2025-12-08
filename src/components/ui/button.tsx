@@ -1,16 +1,25 @@
 import * as React from "react"
+import { motion } from "framer-motion" 
 import { cn } from "@/lib/utils"
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost" | "neon"
   size?: "default" | "sm" | "lg" | "icon"
+  asChild?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => {
+    // Cast props to any to avoid specific drag event conflicts between React and Framer Motion types
+    // This maintains the motion.button behavior while satisfying the strict TS compiler
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const MotionButton = motion.button as any 
+    
     return (
-      <button
+      <MotionButton
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         className={cn(
           "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           {
@@ -34,6 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
+
 Button.displayName = "Button"
 
 export { Button }

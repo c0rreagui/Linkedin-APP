@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { motion } from "framer-motion"
 import { AppLayout } from "@/components/layout/AppLayout"
 import { PromptInput } from "@/components/generator/PromptInput"
 import { ImagePreview } from "@/components/generator/ImagePreview"
@@ -34,10 +35,27 @@ export function GeneratorPage() {
 
   return (
     <AppLayout>
-      <div className="flex flex-col lg:flex-row gap-8 min-h-[calc(100vh-140px)]">
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={{
+            hidden: { opacity: 0 },
+            visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15 }
+            }
+        }}
+        className="flex flex-col lg:flex-row gap-8 min-h-[calc(100vh-140px)]"
+      >
         
         {/* Left Column: Input & Controls */}
-        <div className="flex-1 flex flex-col gap-6">
+        <motion.div 
+            variants={{
+                hidden: { x: -20, opacity: 0 },
+                visible: { x: 0, opacity: 1, transition: { duration: 0.5 } }
+            }}
+            className="flex-1 flex flex-col gap-6"
+        >
             <div>
                 <h2 className="text-2xl font-bold font-heading mb-2">Criar Novo Post</h2>
                 <p className="text-muted-foreground">Descreva sua ideia e deixe a IA cuidar do resto.</p>
@@ -63,10 +81,16 @@ export function GeneratorPage() {
                     <Button variant="outline" size="sm" className="text-xs h-7">Viral</Button>
                  </div>
             </Card>
-        </div>
+        </motion.div>
 
         {/* Right Column: Preview */}
-        <div className="flex-1 lg:max-w-md xl:max-w-lg">
+        <motion.div 
+            variants={{
+                hidden: { x: 20, opacity: 0 },
+                visible: { x: 0, opacity: 1, transition: { duration: 0.5 } }
+            }}
+            className="flex-1 lg:max-w-md xl:max-w-lg"
+        >
              <div className="sticky top-6 space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-bold font-heading">Preview</h2>
@@ -101,8 +125,8 @@ export function GeneratorPage() {
                     )}
                 </div>
              </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </AppLayout>
   )
 }

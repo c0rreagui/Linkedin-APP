@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { MoreHorizontal, ThumbsUp, MessageSquare, Send, Globe } from "lucide-react"
 
@@ -51,9 +52,14 @@ export function LinkedInPost({
 
       {/* Content */}
       <div className="px-4 pb-2">
-        <p className="text-sm whitespace-pre-wrap leading-relaxed">
+        <motion.p 
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-sm whitespace-pre-wrap leading-relaxed"
+        >
             {content}
-        </p>
+        </motion.p>
       </div>
 
       {/* Image */}
