@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base Colors - Deep Space Blue */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    /* Card & Surfaces - Glassy Feel */
+    --card: 224 71% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Colors - Neon Vibes */
+    --primary: 263 70% 50%; /* Deep Purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 89% 48%; /* Cyan/Blue Neon */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 263 70% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 263 70% 50%;
+
+    --radius: 0.75rem; /* 12px for softer corners */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
