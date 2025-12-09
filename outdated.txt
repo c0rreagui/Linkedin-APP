@@ -1,0 +1,16 @@
+Package                            Current    Wanted    Latest  Location                                       Depended by
+@types/node                       20.19.25  20.19.26   24.10.2  node_modules/@types/node                       Linkedin APP
+@types/react                       18.3.27   18.3.27    19.2.7  node_modules/@types/react                      Linkedin APP
+@types/react-dom                    18.3.7    18.3.7    19.2.3  node_modules/@types/react-dom                  Linkedin APP
+@typescript-eslint/eslint-plugin    7.18.0    7.18.0    8.49.0  node_modules/@typescript-eslint/eslint-plugin  Linkedin APP
+@typescript-eslint/parser           7.18.0    7.18.0    8.49.0  node_modules/@typescript-eslint/parser         Linkedin APP
+@vitejs/plugin-react                 4.7.0     4.7.0     5.1.2  node_modules/@vitejs/plugin-react              Linkedin APP
+eslint                              8.57.1    8.57.1    9.39.1  node_modules/eslint                            Linkedin APP
+eslint-plugin-react-hooks            4.6.2     4.6.2     7.0.1  node_modules/eslint-plugin-react-hooks         Linkedin APP
+framer-motion                      11.18.2   11.18.2  12.23.25  node_modules/framer-motion                     Linkedin APP
+globals                            15.15.0   15.15.0    16.5.0  node_modules/globals                           Linkedin APP
+react                               18.3.1    18.3.1    19.2.1  node_modules/react                             Linkedin APP
+react-dom                           18.3.1    18.3.1    19.2.1  node_modules/react-dom                         Linkedin APP
+tailwind-merge                       2.6.0     2.6.0     3.4.0  node_modules/tailwind-merge                    Linkedin APP
+tailwindcss                         3.4.18    3.4.18    4.1.17  node_modules/tailwindcss                       Linkedin APP
+vite                                5.4.21    5.4.21     7.2.7  node_modules/vite                              Linkedin APP
