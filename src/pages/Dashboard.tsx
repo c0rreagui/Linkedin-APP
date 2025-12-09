@@ -1,7 +1,10 @@
 
 import { AppLayout } from "@/components/layout/AppLayout"
+import { useData } from "@/context/store"
 
 export function Dashboard() {
+  const { totalPosts } = useData()
+
   return (
     <AppLayout>
       <div className="space-y-6">
@@ -12,7 +15,7 @@ export function Dashboard() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="bg-card border border-border/50 rounded-xl p-6">
                 <h3 className="font-semibold mb-2">Total de Posts</h3>
-                <p className="text-2xl font-bold text-primary">12</p>
+                <p className="text-2xl font-bold text-primary">{totalPosts}</p>
             </div>
              <div className="bg-card border border-border/50 rounded-xl p-6">
                 <h3 className="font-semibold mb-2">Ideias Geradas</h3>
