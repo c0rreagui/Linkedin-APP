@@ -3,31 +3,38 @@ import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import { LayoutDashboard, PenTool, Settings, Sparkles, User, Menu, X } from "lucide-react"
 
+import { NavLink } from "react-router-dom"
+
+const navLinks = [
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/generator", label: "Gerador de Posts", icon: PenTool },
+  { href: "/ideas", label: "Ideias IA", icon: Sparkles },
+  { href: "/profile", label: "Perfil", icon: User },
+]
+
 const NavItems = () => (
   <>
     <div className="flex-1 px-4 py-6 space-y-2">
-          <Button variant="ghost" className="w-full justify-start gap-2">
-              <LayoutDashboard className="h-4 w-4" />
-              Dashboard
-          </Button>
-          <Button variant="neon" className="w-full justify-start gap-2">
-              <PenTool className="h-4 w-4" />
-              Gerador de Posts
-          </Button>
-          <Button variant="ghost" className="w-full justify-start gap-2">
-              <Sparkles className="h-4 w-4" />
-              Ideias IA
-          </Button>
-          <Button variant="ghost" className="w-full justify-start gap-2">
-              <User className="h-4 w-4" />
-              Perfil
-          </Button>
+      {navLinks.map((link) => (
+        <NavLink key={link.href} to={link.href}>
+          {({ isActive }) => (
+            <Button variant={isActive ? "neon" : "ghost"} className="w-full justify-start gap-2 mb-2">
+              <link.icon className="h-4 w-4" />
+              {link.label}
+            </Button>
+          )}
+        </NavLink>
+      ))}
     </div>
     <div className="p-4 border-t border-border/40">
-           <Button variant="ghost" className="w-full justify-start gap-2 text-muted-foreground">
+       <NavLink to="/settings">
+          {({ isActive }) => (
+            <Button variant={isActive ? "neon" : "ghost"} className="w-full justify-start gap-2 text-muted-foreground">
               <Settings className="h-4 w-4" />
               Configurações
-          </Button>
+            </Button>
+          )}
+        </NavLink>
     </div>
   </>
 )
