@@ -3,8 +3,8 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "ghost" | "neon"
+   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "outline" | "ghost" | "neon" | "destructive"
   size?: "default" | "sm" | "lg" | "icon"
   asChild?: boolean
 }
@@ -23,16 +23,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.6)]":
+            "bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-primary/50 hover:scale-[1.02] border-0 transition-all duration-300":
               variant === "default",
-            "border border-input bg-background/50 hover:bg-accent hover:text-accent-foreground backdrop-blur-sm":
+            "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md shadow-destructive/20":
+              variant === "destructive",
+            "border border-secondary/30 bg-background/40 hover:bg-secondary/10 hover:border-secondary/50 backdrop-blur-md text-foreground transition-all duration-300":
               variant === "outline",
-            "hover:bg-accent hover:text-accent-foreground": variant === "ghost",
+            "hover:bg-primary/10 hover:text-primary transition-colors duration-200": variant === "ghost",
             "bg-transparent border border-primary text-primary shadow-[0_0_10px_hsl(var(--primary)/0.5)] hover:bg-primary hover:text-white hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300":
               variant === "neon",
-            "h-10 px-4 py-2": size === "default",
+            "h-10 px-5 py-2": size === "default",
             "h-9 rounded-md px-3": size === "sm",
-            "h-11 rounded-md px-8": size === "lg",
+            "h-12 rounded-lg px-8 text-base": size === "lg",
             "h-10 w-10": size === "icon",
           },
           className

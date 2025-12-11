@@ -6,38 +6,38 @@
 
 @layer base {
   :root {
-    /* Base Colors - Deep Space Blue */
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
+    /* Base Colors - Deep Space Theme */
+    --background: 240 30% 8%; /* Deep Space Black-Blue */
+    --foreground: 0 0% 100%;
 
-    /* Card & Surfaces - Glassy Feel */
-    --card: 224 71% 6%;
-    --card-foreground: 210 40% 98%;
+    /* Card & Surfaces - Glass Base (Opacity handled in component/utility) */
+    --card: 240 30% 12%; 
+    --card-foreground: 0 0% 100%;
 
-    --popover: 224 71% 6%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 30% 12%;
+    --popover-foreground: 0 0% 100%;
 
     /* Brand Colors - Neon Vibes */
-    --primary: 263 70% 50%; /* Deep Purple */
-    --primary-foreground: 210 40% 98%;
+    --primary: 270 80% 60%; /* Electric Purple */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 199 89% 48%; /* Cyan/Blue Neon */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 190 90% 60%; /* Cyber Cyan */
+    --secondary-foreground: 240 30% 8%; /* Dark text on bright cyan */
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 240 20% 25%;
+    --muted-foreground: 240 10% 70%;
 
-    --accent: 263 70% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 320 85% 65%; /* Hot Pink */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 90% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 263 70% 50%;
+    --border: 240 20% 20%; /* Subtle dark border */
+    --input: 240 20% 20%;
+    --ring: 270 80% 60%;
 
-    --radius: 0.75rem; /* 12px for softer corners */
+    --radius: 0.75rem; /* 12px for standard elements (buttons, inputs) */
   }
 }
 

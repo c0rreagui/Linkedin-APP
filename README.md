@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# Project Gemini
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Status
 
-Currently, two official plugins are available:
+- **Version**: 4.0.0
+- **Codename**: Neon Genesis (Ultimate Edition)
+- **Last Updated**: 2025-12-11
+- **Current Phase**: Phase 4 - UX Revolution
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Descrição
 
-## React Compiler
+Este projeto é uma aplicação web moderna focada em UX/UI de alta qualidade ("Neon Genesis"), utilizando React, TypeScript, Vite e TailwindCSS. O design system foi extraído de referências visuais premium com foco em temas escuros profundos, glassmorphism e acentos neon.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack Tecnológico
 
-## Expanding the ESLint configuration
+- **Frontend**: React + TypeScript + Vite
+- **Estilização**: TailwindCSS + Design System "Neon Genesis"
+- **Banco de Dados**: Supabase
+- **Deploy**: Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Design System
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Consulte `design-system.md` para detalhes sobre tokens de cor, tipografia e componentes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Scripts
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `npm run dev`: Inicia servidor de desenvolvimento
+- `npm run build`: Build de produção
+- `npm run lint`: Verificação de código
